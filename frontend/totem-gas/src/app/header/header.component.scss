@@ -1,0 +1,56 @@
+:host {
+  display: block;       // importante para componentes standalone
+  color: white;         // texto branco
+  padding: 0rem 2rem;   // espaço interno
+  font-size: 1rem;      // tamanho da fonte
+  font-weight: bold;    // negrito
+  user-select: none;    // evita seleção do texto (opcional)
+}
+
+.header {
+  margin: 0 auto;
+ // position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0713be;
+  color: white;
+  padding: 1rem 0;           // só topo e base, remove lateral para centralizar conteúdo
+  display: flex;
+  justify-content: center;   // centraliza o container interno
+  z-index: 1000;
+  height: auto;
+}
+
+.header > div {
+  max-width: 500px;          // limita a largura interna a 400px
+  width: 100%;               // usa toda a largura disponível até 400px
+  display: flex;
+  justify-content: space-between;  // espaça os itens nas extremidades
+  align-items: flex-start;
+  padding: 0 2rem;           // padding lateral interno, pode ajustar se quiser****
+}
+
+.left, .right {
+  padding: 0;                // remove padding lateral para evitar excesso de espaço
+  display: flex;
+  flex-direction: column;    // empilha itens verticalmente
+  gap: 0.25rem;
+}
+
+.label h4 {
+  margin: 0;
+  font-size: 1rem;
+  text-align: right;
+  
+
+}
+
+.liters {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: right;
+}
+.date {
+  font-weight: lighter;
+  font-size: 0.7rem;
+}
