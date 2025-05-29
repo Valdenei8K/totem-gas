@@ -1,0 +1,18 @@
+<div class="keyboard-wrapper">
+  <div class="keyboard">
+    <ng-container *ngIf="tipo === 'quantidade'; else alfanumerico">
+      <div class="grid">
+        <button *ngFor="let t of teclasNumericas" (click)="pressionar(t)">
+          {{ t }}
+        </button>
+      </div>
+    </ng-container>
+    <ng-template #alfanumerico>
+      <div class="grid alpha">
+        <button *ngFor="let t of teclasAlfanumericas" (click)="pressionar(t)">
+          {{ t }}
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</div>
