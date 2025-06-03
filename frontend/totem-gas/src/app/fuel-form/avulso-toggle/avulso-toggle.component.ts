@@ -12,7 +12,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       </label>
     </div>
   `,
-  styles: [`...`]
+  styles: []
 })
 export class AvulsoToggleComponent {
   @Input() ativado = false;

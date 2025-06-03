@@ -1,0 +1,23 @@
+<div class="recent-fuels">
+  <h3>Últimos Abastecimentos</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Data/Hora</th>
+        <th>Operador</th>
+        <th>Placa</th>
+        <th>Litros</th>
+        <th>Valor (R$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of fuelRecords">
+        <td>{{ record.timestamp | date: 'dd/MM/yyyy HH:mm' }}</td>
+        <td>{{ record.operator }}</td>
+        <td>{{ record.plate }}</td>
+        <td>{{ record.liters }}</td>
+        <td>{{ record.amount | currency:'BRL':'symbol-narrow' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
