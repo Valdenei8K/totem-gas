@@ -1,31 +1,33 @@
-<div class="form">
-  <label>Quantidade (litros)</label>
-  <input readonly (click)="abrirTeclado('quantidade')" [value]="quantidade || ''" />
-
-  <small>Máximo: 500L por abastecimento</small>
-
-  <label>Identificação do Operador</label>
-  <button (click)="identificarOperador()">🔵 IDENTIFICAR OPERADOR</button>
-
-  <label>Placa do veículo</label>
-  <input readonly (click)="abrirTeclado('placa')" [value]="placa" placeholder="AAA-0A00" />
-
-  <small>Formato: AAA-0A00 (Mercosul)</small>
-
-  <div class="preco">
-  <div class="linha">
-    <span>Preço por litro:</span>
-    <strong>R$ {{ preco | number: '1.2-2' }}</strong>
+<div class="form-wrapper">
+  <div class="form">
+    <label>Quantidade (litros)</label>
+    <input readonly (click)="abrirTeclado('quantidade')" [value]="quantidade || ''" />
+  
+    <small>Máximo: 500L por abastecimento</small>
+  
+    <label>Identificação do Operador</label>
+    <button (click)="identificarOperador()">🔵 IDENTIFICAR OPERADOR</button>
+  
+    <label>Placa do veículo</label>
+    <input readonly (click)="abrirTeclado('placa')" [value]="placa" placeholder="AAA-0A00" />
+  
+    <small>Formato: AAA-0A00 (Mercosul)</small>
+  
+    <div class="preco">
+      <div class="linha">
+        <span>Preço por litro:</span>
+        <strong>R$ {{ preco | number: '1.2-2' }}</strong>
+      </div>
+      <div class="linha destaque">
+        <span>Total:</span>
+        <strong>R$ {{ total | number: '1.2-2' }}</strong>
+      </div>
+    </div>
+  
+    <button class="start" [disabled]="!podeIniciar()" (click)="iniciarAbastecimento()">
+      ⛽ INICIAR ABASTECIMENTO
+    </button>
   </div>
-  <div class="linha destaque">
-    <span>Total:</span>
-    <strong>R$ {{ total | number: '1.2-2' }}</strong>
-  </div>
-</div>
-
-  <button class="start" [disabled]="!podeIniciar()" (click)="iniciarAbastecimento()">
-    ⛽ INICIAR ABASTECIMENTO
-  </button>
 </div>
 
 <!-- Teclado fixo no rodapé da tela -->

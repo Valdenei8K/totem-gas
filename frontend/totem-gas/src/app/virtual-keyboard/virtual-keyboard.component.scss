@@ -7,14 +7,13 @@
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   padding: 1rem;
-
   display: flex;
   justify-content: center;
 }
 
 .keyboard-wrapper {
   width: 100%;
-  max-width: 400px;
+  max-width: clamp(320px, 90vw, 600px);
 }
 
 .keyboard {

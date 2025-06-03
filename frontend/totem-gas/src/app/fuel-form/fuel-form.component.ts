@@ -13,7 +13,7 @@ import { KeyboardComponent } from '../virtual-keyboard/virtual-keyboard.componen
 export class FuelFormComponent {
   quantidade = 0;
   placa = '';
-  preco = 5.89;
+  preco = 6.69;
   total = 0;
   campoAtivo: 'quantidade' | 'placa' | null = null;
 
