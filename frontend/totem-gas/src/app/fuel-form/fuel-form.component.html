@@ -7,6 +7,8 @@
   
     <label>Identificação do Operador</label>
     <button (click)="identificarOperador()">🔵 IDENTIFICAR OPERADOR</button>
+    
+    <app-avulso-toggle [(ativado)]="modoAvulso" />
   
     <label>Placa do veículo</label>
     <input readonly (click)="abrirTeclado('placa')" [value]="placa" placeholder="AAA-0A00" />

@@ -1,0 +1,8 @@
+<div class="avulso-wrapper">
+  <button
+    (click)="alternar()"
+    [class.ativo]="ativado"
+  >
+    {{ ativado ? '🔓 Abastecimento Avulso ATIVADO' : '🔒 Modo Normal' }}
+  </button>
+</div>
