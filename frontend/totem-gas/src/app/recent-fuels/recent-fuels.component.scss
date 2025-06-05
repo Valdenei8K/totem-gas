@@ -4,6 +4,9 @@
   border: 1px solid #cbd5e0;
   border-radius: 8px;
   background: #f7fafc;
+  overflow-y: auto;
+  min-height: auto;
+  max-height: 400px;
 }
 
 h3 {
