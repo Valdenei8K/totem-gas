@@ -18,6 +18,7 @@ export class FuelFormComponent {
   total = 0;
   campoAtivo: 'quantidade' | 'placa' | null = null;
   modoAvulso = false;
+  editaPeco = false;
 
   abrirTeclado(campo: 'quantidade' | 'placa') {
     this.campoAtivo = campo;
@@ -55,5 +56,15 @@ export class FuelFormComponent {
   iniciarAbastecimento() {
     const modo = this.modoAvulso ? 'Modo Avulso' : `${this.quantidade}L`;
     alert(`Abastecimento iniciado para ${this.placa}, ${modo}`);
+  }
+
+  editarPreco() {
+    this.editaPeco = true;
+  }
+
+  atualizarPreco() {
+    this.editaPeco = false;
+    alert(`Preço atualizado para R$ ${this.preco.toFixed(2)}`);    
+    this.calcularTotal();
   }
 }

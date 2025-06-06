@@ -52,6 +52,13 @@ export class RecentFuelsComponent {
       plate: 'JKL-8M90',
       liters: 20,
       amount: 134
+    },
+    {
+      timestamp: new Date(Date.now() - 1000 * 60 * 180),
+      operator: 'Sofia Oliveira',
+      plate: 'MNO-4P12',
+      liters: 15,
+      amount: 100.5
     }
   ];
 }
