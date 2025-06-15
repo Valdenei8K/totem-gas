@@ -1,0 +1,47 @@
+<div class="form-wrapper">
+  <div class="form">
+    <label>Quantidade (litros)</label>
+    <input readonly (click)="abrirTeclado('quantidade')" [value]="quantidade || ''" />
+
+    <small>Máximo: 500L por abastecimento</small>
+
+    <label>Identificação do Operador</label>
+    <button (click)="identificarOperador()">🔵 IDENTIFICAR OPERADOR</button>
+
+    <app-avulso-toggle [(ativado)]="modoAvulso" />
+
+    <label>Placa do veículo</label>
+    <input readonly (click)="abrirTeclado('placa')" [value]="placa" placeholder="AAA-0A00" />
+
+    <small>Formato: AAA-0A00 (Mercosul)</small>
+
+    <div class="preco">
+      <div class="linha">
+        <span>Preço por litro:</span>
+        <strong>R$ {{ preco | number: '1.2-2' }}</strong>
+      </div>
+      <div class="linha destaque">
+        <span>Total:</span>
+        <strong>R$ {{ total | number: '1.2-2' }}</strong>
+      </div>
+    </div>
+
+    <button
+      class="start"
+      [class.encerrar]="abastecendo"
+      [disabled]="!podeIniciar() && !abastecendo"
+      (click)="iniciarOuEncerrar()"
+    >
+      {{ abastecendo ? '🚫 ENCERRAR ABASTECIMENTO' : '⛽ INICIAR ABASTECIMENTO' }}
+    </button>
+  </div>
+</div>
+
+<app-keyboard
+  *ngIf="campoAtivo"
+  class="teclado-flutuante"
+  [tipo]="campoAtivo"
+  [valorInicial]="campoAtivo === 'quantidade' ? quantidade.toString() : placa"
+  (valorDigitado)="atualizarCampo($event)"
+  (fechar)="campoAtivo = null"
+/>

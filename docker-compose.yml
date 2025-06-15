@@ -1,0 +1,37 @@
+
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: django-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/code
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: angular-frontend
+    ports:
+      - "4200:80"
+    restart: unless-stopped
+
+  # (Opcional) Banco de Dados PostgreSQL
+  db:
+    image: postgres
+    container_name: postgres-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
